@@ -1,0 +1,112 @@
+// ===================================================================
+// コンテンツエリア
+// ===================================================================
+
+
+
+/* #container
+=================================================================== */
+.header {
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	background-color: rgba(#fff,.8);
+	display: flex;
+}
+
+
+.inner {
+	max-width: $base_width;
+	margin: auto;
+	@media only screen and (max-width: $base_width) {
+		padding-left: $content_space;
+		padding-right: $content_space;
+	}
+}
+
+.sec01 {
+	position: relative;
+	height: 100vh;
+	background: rgba(#a59b88,.4);
+	.stie_logo {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-right: -50%;
+		-webkit-transform: translate(-50%, -50%); /* Safari用 */
+		transform: translate(-50%, -50%);
+	}
+	video {
+		-o-object-fit: cover;
+		object-fit: cover;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: -100;
+		background-image: url(../video/01.jpg);
+		background-size: cover;
+	}
+}
+
+.scroll {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	a {
+		position: absolute;
+		bottom: 20px;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		display: inline-block;
+		-webkit-transform: translate(0, -20%);
+		transform: translate(0, -20%);
+		padding-top: 70px;
+		color: rgba(#a59b88,.9);
+		font-weight: 100;
+		span {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 24px;
+			height: 24px;
+			margin-left: -12px;
+			border-left: 1px solid rgba(#a59b88,.9);
+			border-bottom: 1px solid rgba(#a59b88,.9);
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			-webkit-animation: sdb 1.5s infinite;
+			animation: sdb 1.5s infinite;
+		}
+	}
+}
+@-webkit-keyframes sdb {
+	0% {
+		-webkit-transform: rotate(-45deg) translate(0, 0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: rotate(-45deg) translate(-20px, 20px);
+		opacity: 0;
+	}
+	}
+	@keyframes sdb {
+	0% {
+		transform: rotate(-45deg) translate(0, 0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: rotate(-45deg) translate(-20px, 20px);
+		opacity: 0;
+	}
+}
