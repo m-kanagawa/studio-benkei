@@ -1,4 +1,107 @@
 
+.reveal {
+  display: inline-block;
+  position: relative;
+ -webkit-background-clip: text;
+  background-clip: text;
+  background: -webkit-linear-gradient(0deg, #222 50%, transparent 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-position: 100% 0;
+  background-size: 200% 100%;
+  transition: .6s all cubic-bezier(0.860, 0.000, 0.070, 1.000) .8s;
+}
+
+.reveal:before{
+  background: #034ceb;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.reveal.animated { background-position: 0 0; }
+.reveal.animated:before { animation: reveal 1.5s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards; }
+
+.zzz {
+  background: -webkit-linear-gradient(left,rgba(255,255,255,0) 50%,#310c0c 50%);
+  background: linear-gradient(to right,rgba(255,255,255,0) 50%,#310c0c 50%);
+  background-position: 100% 0;
+  background-size: 201%;
+  display: inline;
+  overflow: hidden;
+  transition: 4s;
+  &.animated {
+    background-position: 0 0%;
+  }
+}
+
+
+/* animation */
+@-webkit-keyframes passing_bar {
+  0% { left: 0; right: auto; width: 0; }
+  50% { left: 0; right: auto; width: 100%; }
+  51% { left: auto; right: 0; width: 100%; }
+  100% { left: auto; right: 0; width: 0; }
+}
+@keyframes passing_bar {
+  0% { left: 0; width: 0; }
+  50% { left: 0; width: 100%; }
+  51% { left: 0; width: 100%; }
+  100% { left: 100%; width: 0; }
+}
+@-webkit-keyframes passing_txt {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes passing_txt {
+  0% { opacity:0; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+ 
+.passing_bar
+.passing_txt {
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  /* 任意の値 */
+  font-size: 4.0rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.passing_bar.animated {
+  position: relative;
+  display: inline-block;
+  //普段CPUで処理しているものをGPUを使って処理し滑らかになるそう
+  transform: translate3d(0, 0, 0);
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    -webkit-animation: passing_bar 1s ease 0s 1 normal forwards;
+    animation: passing_bar 1s ease 0s 1 normal forwards;
+    /* 任意の値 */
+    background: #000;
+  }
+  .passing_txt {
+    -webkit-animation: passing_txt 0s ease .5s 1 normal forwards;
+    animation:passing_txt 0s ease .5s 1 normal forwards;
+  }
+}
+
+
 .sb {
   &.fade_in,
   &.fade_up,
