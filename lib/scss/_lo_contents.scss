@@ -161,6 +161,7 @@ img {
 			object-fit: cover;
 			transform: scale(1.1);
 			opacity: 0;
+			filter: blur(10px);
 		}
 		&.animated {
 			img {
@@ -168,18 +169,33 @@ img {
 				transition: transform 2s linear;
 				opacity: 1;
 				transition: 4s;
+				filter: blur(0);
 			}
 		}
 	}
 	.text_box {
 		position: relative;
-		left: -60px;
+		// left: -60px;
 		z-index: 1;
 		max-width: 600px;
 		padding: 60px;
 		margin-top: 30px;
-		transform: translateX(60px);
+		transform: translateX(-60px);
 		background-color: #fff;
+		.passing_bar.animated {
+			&::before {
+			background: #efefef;
+			}
+		}
+	}
+	&:nth-child(2n) {
+		flex-direction: row-reverse;
+		.text_box {
+			transform: translateX(60px);
+		}
+	}
+	&:not(:last-child) {
+		margin-bottom: 100px;
 	}
 }
 
@@ -196,7 +212,7 @@ img {
 .square_btn {
 	display: inline-block;
 
-	
+
 	a {
 		position: relative;
 		display: inline-block;

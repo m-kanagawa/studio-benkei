@@ -72,9 +72,6 @@
   opacity: 0;
   transform: translate3d(0, 0, 0);
   /* 任意の値 */
-  font-size: 4.0rem;
-  font-weight: bold;
-  line-height: 1.5;
 }
 .passing_bar.animated {
   position: relative;
@@ -93,7 +90,7 @@
     -webkit-animation: passing_bar 1s ease 0s 1 normal forwards;
     animation: passing_bar 1s ease 0s 1 normal forwards;
     /* 任意の値 */
-    background: #000;
+    background: $main_color;
   }
   .passing_txt {
     -webkit-animation: passing_txt 0s ease .5s 1 normal forwards;
@@ -101,6 +98,7 @@
   }
 }
 
+    // animation-delay: 2s;
 
 .sb {
   &.fade_in,
