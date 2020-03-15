@@ -2,7 +2,9 @@
 // コンテンツエリア
 // ===================================================================
 
-
+img {
+	max-width: 100%;
+}
 
 /* #container
 =================================================================== */
@@ -138,3 +140,129 @@
 		height: 100vh;
 	}
 }
+
+.sec_top_post {
+	padding: 150px 0;
+	// background-color: lighten( $main_color, 30% );
+	background-color: #dcd5d4;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='46' height='46' fill-opacity='0.85' fill='%23d9cecc'/%3E%3C/svg%3E");
+}
+.top_post_info {
+	display: flex;
+	.img_box,
+	.text_box {
+		width: 50%;
+	}
+	.img_box {
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 400px;
+			object-fit: cover;
+			transform: scale(1.1);
+			opacity: 0;
+		}
+		&.animated {
+			img {
+				transform: scale(1);
+				transition: transform 2s linear;
+				opacity: 1;
+				transition: 4s;
+			}
+		}
+	}
+	.text_box {
+		position: relative;
+		left: -60px;
+		z-index: 1;
+		max-width: 600px;
+		padding: 60px;
+		margin-top: 30px;
+		transform: translateX(60px);
+		background-color: #fff;
+	}
+}
+
+// @keyframes ltr {
+//   0% {
+//     object-position: 0% 0%;
+//   }
+//   100% {
+//     object-position: 50% 50%;
+//   }
+// }
+
+
+.square_btn {
+	display: inline-block;
+
+	
+	a {
+		position: relative;
+		display: inline-block;
+		padding: 10px 30px;
+		color: $btn_txt_color;
+		text-decoration: none;
+		text-align: center;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 0;
+			height: 1px;
+			background-color: #333;
+			transition-delay: 0s;
+			transition: 1s;
+		}
+		&::before {
+			bottom: 0;
+			left: 0;
+		}
+		&::after {
+			top: 0;
+			right: 0;
+		}
+		span {
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 1px;
+				height: 0;
+				background-color: #333;
+				transition-delay: 0s;
+				transition: 1s;
+			}
+			&::before {
+				bottom: 0;
+				left: 0;
+			}
+			&::after {
+				top: 0;
+				right: 0;
+			}
+		}
+	}
+	&.animated {
+		a {
+			&::before,
+			&::after {
+				width: 100%;
+				transition-delay: 0s;
+			}
+			span {
+				&::before,
+				&::after {
+					height: 100%;
+					transition-delay: 0.3s;
+				}
+			}
+		}
+	}
+}
+
+
+
+

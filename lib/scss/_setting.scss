@@ -36,12 +36,12 @@ $sp_width: 768px;
 $tb_width: 1024px;
 
 $base_color: #fff;		// ベースカラー
-$main_color: #3b4656;	// メインカラー
+$main_color: #a59b88;	// メインカラー
 $sub_color: #808080;			//サブカラー
 $accent_color: #ff7011;// アクセントカラー
 $txt_color: #434343;	//テキストカラー
 
-$btn_txt_color: #fff;  //テキストカラー
+$btn_txt_color: #333;  //テキストカラー
 $btn_color: $main_color;  //テキストカラー
 
 $body_color: $base_color;
@@ -62,3 +62,17 @@ a {text-decoration: none;}
 // a:visited {}
 a:hover {text-decoration: none;}
 // a:active {}
+
+// カラー変更SASS
+
+// 明度の調節（lighten / darken）
+// color: lighten( $main_color, 15% );
+// color: darken( $main_color, 15% );
+
+// 彩度の調節（saturate / desaturate）
+// $bg-color: saturate( $main_color, 20% );
+// $bg-color: desaturate( $main_color, 20% );
+
+// 透明度の調節
+// $bg-color: transparentize( $main_color, 0.8 );
+// $bg-color: rgba( $main_color, 0.2 );
