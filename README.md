@@ -1,1 +1,4 @@
-# studio-benkei
+# studio-benkeiのLPページ
+
+## バージョン管理
+
