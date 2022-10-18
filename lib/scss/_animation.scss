@@ -44,23 +44,14 @@
 
 
 /* animation */
-@-webkit-keyframes passing_bar {
-  0% { left: 0; right: auto; width: 0; }
-  50% { left: 0; right: auto; width: 100%; }
-  51% { left: auto; right: 0; width: 100%; }
-  100% { left: auto; right: 0; width: 0; }
-}
+
 @keyframes passing_bar {
   0% { left: 0; width: 0; }
   50% { left: 0; width: 100%; }
   51% { left: 0; width: 100%; }
   100% { left: 100%; width: 0; }
 }
-@-webkit-keyframes passing_txt {
-  0% { opacity: 0; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
+
 @keyframes passing_txt {
   0% { opacity:0; }
   50% { opacity:0; }
@@ -87,13 +78,11 @@
     left: 0;
     top: 0;
     z-index: 1;
-    -webkit-animation: passing_bar 1s ease 0s 1 normal forwards;
     animation: passing_bar 1s ease 0s 1 normal forwards;
     /* 任意の値 */
     background: $main_color;
   }
   .passing_txt {
-    -webkit-animation: passing_txt 0s ease .5s 1 normal forwards;
     animation:passing_txt 0s ease .5s 1 normal forwards;
   }
 }
